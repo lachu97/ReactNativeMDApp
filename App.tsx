@@ -24,18 +24,29 @@ import {
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
-import { ButtonComponent, IconButtonComponent, Customchips, SnackBar } from './AppModules/Views/Home';
+import { ButtonComponent,
+  CardActions,
+  TInput,
+  SegmentButton,IconButtonComponent, Customchips, SnackBar,SwitchComponet } from './AppModules/Views/Home';
 import { Divider } from 'react-native-paper'
 
 function App(): JSX.Element {
   return (
-<SafeAreaProvider style={{flex:1,height: '100%',width: '100%'}}>
+<SafeAreaProvider>
     <View style={styles.container}>
        <Text style={{ color: 'white' }}>Hello </Text>
         <Divider bold={true} horizontalInset={true} />
         <ButtonComponent />
-        <Divider />
+        <Divider style={styles.divider} />
+        <SwitchComponet/>
+        <Divider style={styles.divider} />
         <SnackBar />
+        <TInput/>
+        <Divider style={styles.divider} />
+        <SegmentButton/>
+        <Divider style={styles.divider} />
+        <CardActions/>
+
     </View>
 </SafeAreaProvider>
   );
@@ -64,6 +75,9 @@ const styles = StyleSheet.create({
   highlight: {
     fontWeight: '700',
   },
+  divider:{
+    marginTop:10
+  }
 });
 
 export default App;
